@@ -33,7 +33,7 @@
 			echo(json_encode($row));
 		}
 		else{
-			echo json_encode("-1");
+			echo (json_encode(-1));
 		}
 
 
