@@ -134,22 +134,22 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <img class="img-circle" src="images/logoCircle/logoMap.png" alt="Logo carte" width="140" height="140">
+          <h2>Localisation</h2>
+          <p>Elle permet de localiser le patient à l'intérieur de la résidence ou de la propriété via des bornes WiFi installées à plusieurs endroits. Si la personne sort du périmètre défini, une alerte visuelle et vibratoire est envoyée sur le smartphone du soignant.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/logoCircle/glass-of-water.jpg" alt="verre d'eau" width="140" height="140">
+          <h2>Besoins primaires</h2>
+          <p>Dans le cadre du bien-être de la personne âgée, boire de l'eau à intervalle régulier est important. Notre produit permet de lui rappeler de boire dès que possible. Si elle n’a pas bu après un certain laps de temps une alerte est envoyée sur le smartphone du soignant.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/logoCircle/alarm2.png" alt="alarme" width="140" height="140">
           <h2>Rappel</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Anti-fugue</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Simplicité</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>Notre produit permet de gérer le rappel de la prise de médicaments pour les personnes les prenant à heures fixes. Dès que le signal vibrant et lumineux (dessin simple) du bracelet s'enclenche, elle doit prendre ses médicaments. Après avoir pris ses médicaments dans son pilulier, elle appuie sur le bracelet pour signaler que l’action a bien été effectuée.</p>
+          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -160,11 +160,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Aide aux personnes âgées <span class="text-muted"></span></h2>
+          <p class="lead">Les besoins de la personne âgée sont vastes et complexes. Dans l’optique d’aider la personne âgée et de soulagées le personnel médical nous avons créé CareWatch. CareWatch est un produit
+           au design simple et efficace. Il permettra au personnel médical de savoir depuis un smartphone si la personne âgée n’est pas sortie sans l’autorisations, c’est bien hydraté et pris c’est médicament.+ slogant à trouver</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="images/description/personnesA.jpg" alt="groupePersonneAgee">
         </div>
       </div>
 
@@ -172,17 +173,17 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Savoir se démarquer<span class="text-muted"> de la concurence.</span></h2>
+          <p class="lead">Notre particularité vis-à-vis de la concurrence est qu'avec ce système particulier, les personnes âgées oubliant par négligence de boire de l'eau seront rappelées et le cas échant, un message sera envoyé au personnel pour que celui-ci l'insite à s'hydrater. Cette application offre au personnel une aide non négligeable tant pour le bien être du patient que pour sa sécurité.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="images/description/light.png" alt="ampoule allumée">
         </div>
       </div>
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
+      <!--<div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -190,7 +191,7 @@
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
-      </div>
+      </div>-->
 
       <hr class="featurette-divider">
 
@@ -200,7 +201,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2016 CareWatch, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="http://getbootstrap.com/examples/carousel/">Template Carousel BootStrap</a></p>
       </footer>
 
     </div><!-- /.container -->
