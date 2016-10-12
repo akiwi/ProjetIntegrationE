@@ -1,24 +1,28 @@
 package be.ephec.groupe3.carewatch;
+        import android.app.Activity;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.ListView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import be.ephec.groupe3.carewatch.Task.TaskConnexion;
+        import be.ephec.groupe3.carewatch.Adapter.List_Patients;
+        import be.ephec.groupe3.carewatch.Task.TaskConnexion;
 
 public class MainActivity extends Activity implements TaskConnexion.CustomConnexion, View.OnClickListener {
     private TextView userName;
     private TextView userPwd;
     private Button btnConnect;
+    private Context myContext;
 
     private String login = "";
     private String pass = "";
 
-    private final String URL_CONNEXION = "http://192.168.0.16:8080/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://192.168.1.44:7894/projetintegration/connexion.php?";
 
     private Boolean debug = false;
 
@@ -74,8 +78,8 @@ public class MainActivity extends Activity implements TaskConnexion.CustomConnex
         else{
             if(debug)
                 Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
-            setContentView(R.layout.activity_main);
+            Intent intent = new Intent(getApplicationContext(),ListPatActivity.class);
+            startActivity(intent);
         }
-
     }
 }
