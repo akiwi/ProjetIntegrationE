@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue sur CareWatch !"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:id="@+id/ET_name"
+        android:hint="Nom Utilisateur"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="14dp"
+        android:id="@+id/ET_pass"
+        android:hint="Mot de passe"
+        android:singleLine="false"
+        android:layout_below="@+id/ET_name"
+        android:layout_alignLeft="@+id/ET_name"
+        android:layout_alignStart="@+id/ET_name" />
+
+    <Button
+        android:text="Se connecter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/btn_connect"
+        android:layout_below="@+id/ET_pass"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
