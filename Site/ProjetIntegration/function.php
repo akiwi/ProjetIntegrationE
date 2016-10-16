@@ -30,10 +30,12 @@
 			$result->data_seek(0);
 
 			$row = $result->fetch_row();
-			echo(json_encode($row));
+			$arr = array("id" => $row[0]);
+			echo(json_encode($arr));
 		}
 		else{
-			echo (json_encode(-1));
+			$arr = array("id" => -1);
+			echo(json_encode($arr));
 		}
 
 
