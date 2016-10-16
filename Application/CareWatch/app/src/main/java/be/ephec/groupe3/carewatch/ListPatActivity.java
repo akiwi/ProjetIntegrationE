@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import be.ephec.groupe3.carewatch.Adapter.List_Patients;
 
 /**
  * Created by aymeric on 12-10-16.
