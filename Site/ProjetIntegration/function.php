@@ -34,7 +34,7 @@
 			echo(json_encode($arr));
 		}
 		else{
-			$arr = array("id" => -1);
+			$arr = array("id" => "-1");
 			echo(json_encode($arr));
 		}
 
