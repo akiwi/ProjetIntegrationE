@@ -1,0 +1,40 @@
+// pour la création de l'ap tirer du site :https://learn.adafruit.com/setting-up-a-raspberry-pi-as-a-wifi-access-point/install-software
+sudo apt-get update
+//hostpad permet la création pur de l'AP
+sudo apt-get install hostapd isc-dhcp-server
+-----------------
+// ----- IP static -------
+//dans le
+sudo nano /etc/network/interfaces
+//trouver la ligne auto wlan0 et la mettre en commentaire (#)
+//ajouter les lignes:
+/*iface wlan0 inet static
+  address @ip du boitier
+  netmask masaue sous réseau*/
+//mettre le boitier en ip static
+sudo ifconfig wlan0 @ip du boitier
+------------------------------------------------
+// ----- crée l'AP ------
+//aller dans le fichier (nouveau fichier créer
+sudo nano /etc/hostapd/hostapd.conf
+// y écrire:
+/*
+interface=wlan0
+driver=rtl871xdrv 
+ssid=RPI_AP
+country_code=US
+hw_mode=g
+channel=6
+macaddr_acl=0
+auth_algs=1
+ignore_broadcast_ssid=0
+wpa=2
+wpa_passphrase=Raspberry
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=CCMP
+wpa_group_rekey=86400
+ieee80211n=1
+wme_enabled=1
+*/
+//le sauver 
+//aller dans le fichier  sudo nano /etc/default/hostapd et décommenter DAEMON_CONF=/etc/hostapd/hostapd.conf
