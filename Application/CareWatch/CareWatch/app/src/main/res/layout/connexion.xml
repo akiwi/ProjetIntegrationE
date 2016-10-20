@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim">
+
+    <TextView
+        android:text="Bienvenue sur CareWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="148dp"
+        android:textColor="@color/inputAccess"
+        android:textSize="30dp"
+        android:id="@+id/textView2" />
+
+    <LinearLayout
+        android:layout_marginLeft="38dp"
+        android:orientation="vertical"
+        android:background="@drawable/round_corner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="82dp"
+        android:gravity="center"
+        android:padding="15dp"
+>
+
+        <EditText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            android:text="aymeric"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:id="@+id/ET_name" />
+        <EditText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="password"
+            android:text="aymeric"
+            android:ems="10"
+            android:id="@+id/ET_pass"
+            />
+        <Button
+            android:text="Se connecter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_connect"
+            android:layout_below="@+id/ET_pass"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+</RelativeLayout>
