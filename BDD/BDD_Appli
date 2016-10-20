@@ -39,14 +39,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Infermiere`
+-- Table `mydb`.`Infirmiere`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Infermiere` (
-  `idInfermiere` INT NOT NULL,
+  `idInfirmiere` INT NOT NULL,
   `niveau` VARCHAR(85) NULL,
   `nom` VARCHAR(255) NOT NULL,
   `prenom` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idInfermiere`),
+  PRIMARY KEY (`idInfirmiere`),
   CONSTRAINT `nom`
     FOREIGN KEY ()
     REFERENCES `mydb`.`Personnes` ()
