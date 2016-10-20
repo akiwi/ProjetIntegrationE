@@ -1,18 +1,21 @@
 package be.ephec.groupe3.carewatch;
-        import android.app.Activity;
-        import android.content.ContentValues;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-        import be.ephec.groupe3.carewatch.Task.TaskConnect;
+import java.util.Iterator;
+
+import be.ephec.groupe3.carewatch.Task.TaskConnect;
 
 public class MainActivity extends Activity implements View.OnClickListener, TaskConnect.CustomConnexion {
     private TextView userName;
@@ -22,7 +25,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     private String login = "";
     private String pass = "";
 
-    private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://10.99.2.162:12450/projetintegration/connexion.php?";
 
     private Boolean debug = false; //passer en mode debug et avoir des infos en plus
     private Boolean test = false; //active l'interface de test
@@ -80,16 +83,15 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("Réponse",id);
         if(id.equals("-1")){
             if(debug)
                 Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
             Toast.makeText(this,"Login/mot de passe incorrect",Toast.LENGTH_SHORT).show();
-        }
-        else{
+        } else {
             if(debug)
                 Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(),ListPatActivity.class);
+            intent.putExtra("JsonList",s);
             startActivity(intent);
         }
     }

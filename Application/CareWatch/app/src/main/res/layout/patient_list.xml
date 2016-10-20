@@ -15,20 +15,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/image1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:textSize="20dp"
             android:id="@+id/listNom"
             android:text="[TEXT1]"
-            android:textColor="#000000"/>
+            android:textColor="@color/colorPrimaryDark"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:textSize="20dp"
             android:id="@+id/listPrenom"
             android:textAppearance="?android:attr/textAppearance"
             android:text="[TEXT2]"
-            android:textColor="#040404"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>
 </RelativeLayout>

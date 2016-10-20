@@ -2,11 +2,17 @@ package be.ephec.groupe3.carewatch;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -20,16 +26,12 @@ public class ListPatActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recupPatient();
+        Bundle extras = getIntent().getExtras();
+        String jsonList = extras.getString("JsonList");
+        recupPatient(transformJson(jsonList));
     }
-    public void recupPatient() {
+    public void recupPatient(String[][] repertoire) {
         lvPatients = (ListView) findViewById(R.id.LvPatients);
-
-        String[][] repertoire = new String[][]{
-                {"Bill Gates", "06 06 06 06 06"},
-                {"Niels Bohr", "05 05 05 05 05"},
-                {"Alexandre III de Macédoine", "04 04 04 04 04"}};
-
         List<HashMap<String, String>> liste = new ArrayList<HashMap<String, String>>();
         HashMap<String, String> element;
 
@@ -45,5 +47,31 @@ public class ListPatActivity extends Activity{
                 new int[]{R.id.listNom, R.id.listPrenom});
         //Pour finir, on donne à la ListView le SimpleAdapter
         lvPatients.setAdapter(adapter);
+
+       // lvPatients.setOnItemClickListener();
+    }
+    public String[][] transformJson(String s){
+        String[][] repertoire = new String[10][3];
+        try {
+            JSONObject jo = new JSONObject(s);
+            JSONObject jArr = jo.getJSONObject("infoPatients");
+
+            Iterator x = jArr.keys(); //on récupère les key du jArr..
+            JSONArray jsonArray = new JSONArray();
+            while (x.hasNext()){   //...nous permetant d'énumerer toute les key
+                String key = (String) x.next();
+                jsonArray.put(jArr.get(key));
+            }
+            Log.d("arraylength", String.valueOf(jsonArray.length()));
+            repertoire = new String[jsonArray.length()][3];
+            for (int i=0; i < jsonArray.length(); i++) {
+                JSONObject json_data = jsonArray.getJSONObject(i);
+                repertoire[i][0] = json_data.getString("Nom");
+                repertoire[i][1] = json_data.getString("Prenom");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return repertoire;
     }
 }
