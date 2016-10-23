@@ -64,11 +64,8 @@ void loop() {
     return;
   }
 
-  Serial.print("Requesting URL: ");
-  Serial.println(url);
-
   // This will send the request to the server
-  client.print("salut donne moi des infos");
+  client.print("repas");
   delay(10);
 
   // Read all the lines of the reply from server and print them to Serial
