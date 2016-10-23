@@ -64,9 +64,6 @@ void loop() {
     return;
   }
 
-  // We now create a URI for the request
-  String url = "/stan";
-
   Serial.print("Requesting URL: ");
   Serial.println(url);
 
@@ -83,6 +80,7 @@ void loop() {
     String line = client.readStringUntil('\r');
     Serial.print(line);
     display.println(line);
+    display.display();
   }
 
   Serial.println();
