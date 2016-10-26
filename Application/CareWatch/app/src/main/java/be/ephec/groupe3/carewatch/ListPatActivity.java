@@ -1,77 +1,97 @@
 package be.ephec.groupe3.carewatch;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import be.ephec.groupe3.carewatch.pat.OnePatient;
+import be.ephec.groupe3.carewatch.ui.UIAdapter;
 
 /**
  * Created by aymeric on 12-10-16.
  */
 
-public class ListPatActivity extends Activity{
+public class ListPatActivity extends Activity {
     ListView lvPatients;
+    List<OnePatient> listPatient ;
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bundle extras = getIntent().getExtras();
-        String jsonList = extras.getString("JsonList");
-        recupPatient(transformJson(jsonList));
-    }
-    public void recupPatient(String[][] repertoire) {
+
+        Bundle extras = getIntent().getExtras(); //on reprend les data inséré dans l'intent
+        String jsonList = extras.getString("JsonList"); //récupération du tableau JSON sous forme de string
+        listPatient = transformJson(jsonList); //transformation du tableau JSON en tableau d'objet OnePatient
+        recupPatient(listPatient);
+
         lvPatients = (ListView) findViewById(R.id.LvPatients);
-        List<HashMap<String, String>> liste = new ArrayList<HashMap<String, String>>();
-        HashMap<String, String> element;
+        lvPatients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("position", String.valueOf(id));
+                OnePatient h = listPatient.get(position);
+                Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
+                intent.putExtra("nom", h.getNom());
+                intent.putExtra("prenom", h.getPrenom());
 
-        //Pour chaque personne dans notre répertoire…
-        for (int i = 0; i < repertoire.length; i++){
-            //… on crée un élément pour la liste…
-            element = new HashMap<String, String>();
-            element.put("Nom", repertoire[i][0]);
-            element.put("Prénom", repertoire[i][1]);
-            liste.add(element);
-        }
-        SimpleAdapter adapter = new SimpleAdapter(this, liste, R.layout.patient_list, new String[]{"Nom", "Prénom"},
-                new int[]{R.id.listNom, R.id.listPrenom});
-        //Pour finir, on donne à la ListView le SimpleAdapter
-        lvPatients.setAdapter(adapter);
-
-       // lvPatients.setOnItemClickListener();
+                startActivity(intent);
+            }
+        });
     }
-    public String[][] transformJson(String s){
-        String[][] repertoire = new String[10][3];
+
+    public void recupPatient(List<OnePatient> repertoire) {
+        lvPatients = (ListView) findViewById(R.id.LvPatients);
+        Log.d("adapter", "entre dans adapter");
+
+        UIAdapter uiAdapter = new UIAdapter(this.getApplicationContext(), repertoire);
+        Log.d("adapter", "sors de l'adapter");
+
+        lvPatients.setAdapter(uiAdapter);
+        //UIAdapter.addAll(repertoire);
+
+    }
+
+    public List<OnePatient> transformJson(String s) {
+        List<OnePatient> listPatient = new ArrayList<>();
         try {
             JSONObject jo = new JSONObject(s);
             JSONObject jArr = jo.getJSONObject("infoPatients");
 
             Iterator x = jArr.keys(); //on récupère les key du jArr..
             JSONArray jsonArray = new JSONArray();
-            while (x.hasNext()){   //...nous permetant d'énumerer toute les key
+            while (x.hasNext()) {   //...nous permetant d'énumerer toute les key
                 String key = (String) x.next();
                 jsonArray.put(jArr.get(key));
             }
             Log.d("arraylength", String.valueOf(jsonArray.length()));
-            repertoire = new String[jsonArray.length()][3];
-            for (int i=0; i < jsonArray.length(); i++) {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject json_data = jsonArray.getJSONObject(i);
-                repertoire[i][0] = json_data.getString("Nom");
-                repertoire[i][1] = json_data.getString("Prenom");
+                Log.d("POS-PAT", String.valueOf(i) + json_data.getString("Nom"));
+                OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"));
+                listPatient.add(patient);
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return repertoire;
+        return listPatient;
     }
 }

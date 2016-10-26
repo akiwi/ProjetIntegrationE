@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import be.ephec.groupe3.carewatch.MainActivity;
-
+//loic le rageux
 /**
  * Created by Julien on 8/10/2016.
  */
