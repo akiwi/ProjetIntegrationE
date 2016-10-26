@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:background="@color/inputAccess"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:text="profil de :"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:id="@+id/tvNomPre" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:textSize="20dp"
+            android:text="est actuellement : "
+            android:id="@+id/tvEstPresent"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:textSize="20dp"
+            android:text="note : "
+            android:id="@+id/tvNote"
+            />
+
+    </LinearLayout>
+</LinearLayout>

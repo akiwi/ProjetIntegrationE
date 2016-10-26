@@ -3,7 +3,6 @@ package be.ephec.groupe3.carewatch;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import be.ephec.groupe3.carewatch.pat.OnePatient;
+import be.ephec.groupe3.carewatch.Pat.OnePatient;
 import be.ephec.groupe3.carewatch.ui.UIAdapter;
 
 /**
@@ -52,6 +51,8 @@ public class ListPatActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
                 intent.putExtra("nom", h.getNom());
                 intent.putExtra("prenom", h.getPrenom());
+                intent.putExtra("estPresent",h.getEstPresent());
+                intent.putExtra("note",h.getNote());
 
                 startActivity(intent);
             }
@@ -60,14 +61,8 @@ public class ListPatActivity extends Activity {
 
     public void recupPatient(List<OnePatient> repertoire) {
         lvPatients = (ListView) findViewById(R.id.LvPatients);
-        Log.d("adapter", "entre dans adapter");
-
         UIAdapter uiAdapter = new UIAdapter(this.getApplicationContext(), repertoire);
-        Log.d("adapter", "sors de l'adapter");
-
         lvPatients.setAdapter(uiAdapter);
-        //UIAdapter.addAll(repertoire);
-
     }
 
     public List<OnePatient> transformJson(String s) {
@@ -86,7 +81,7 @@ public class ListPatActivity extends Activity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject json_data = jsonArray.getJSONObject(i);
                 Log.d("POS-PAT", String.valueOf(i) + json_data.getString("Nom"));
-                OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"));
+                OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"),json_data.getInt("estPresent"),json_data.getString("note"));
                 listPatient.add(patient);
             }
         } catch (JSONException e) {

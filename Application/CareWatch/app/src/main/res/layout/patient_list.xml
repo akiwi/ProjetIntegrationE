@@ -20,16 +20,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="7dp"
-            android:textSize="20dp"
+            android:padding="3dp"
+            android:textSize="15dp"
             android:id="@+id/listNom"
             android:text="[TEXT1]"
             android:textColor="@color/colorPrimaryDark"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="7dp"
-            android:textSize="20dp"
+            android:padding="3dp"
+            android:textSize="15dp"
             android:id="@+id/listPrenom"
             android:textAppearance="?android:attr/textAppearance"
             android:text="[TEXT2]"
