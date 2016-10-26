@@ -1,19 +1,17 @@
 package be.ephec.groupe3.carewatch.ui;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import be.ephec.groupe3.carewatch.R;
-import be.ephec.groupe3.carewatch.Pat.OnePatient;
+import be.ephec.groupe3.carewatch.pat.OnePatient;
 
 /**
  * Created by aymeric on 25-10-16.
@@ -39,11 +37,6 @@ public class UIAdapter extends ArrayAdapter<OnePatient> {
         OnePatient h = repertoire.get(position);
         text1.setText(h.getNom());
         text2.setText(h.getPrenom());
-        int estPre = h.getEstPresent();
-        if(estPre == 0){
-            text1.setTextColor(Color.WHITE);
-            text2.setTextColor(Color.WHITE);
-            convertView.setBackgroundResource(R.color.colorAccent);        }
         return convertView;
     }
 }
