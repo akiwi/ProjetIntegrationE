@@ -45,14 +45,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">CareWatch</a>
+              <a href="#"><img class="first-slide" src="images/logoCW.jpg" alt="Logo de CareWatch"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
+                <li ><a href="#">Accueil</a></li>
+                <!--<li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <!--<li class="dropdown">
+                <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
@@ -88,7 +88,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Bienvenue</h1>
-              <p>Avec CareWatch ne tombez plus dans l'oubli</p>
+              <p></p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Souscrire maintenant</a></p>
             </div>
           </div>
@@ -98,8 +98,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Système Anti-fugue</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">En savoir plus</a></p>
+              <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+              <p><a class="btn btn-lg btn-primary" href="#Fugue" role="button">En savoir plus</a></p>
             </div>
           </div>
         </div>
@@ -108,8 +108,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>CareWatch est d'une simplicité</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">En savoir plus</a></p>
+              <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+              <p><a class="btn btn-lg btn-primary" href="#Simplicite" role="button">En savoir plus</a></p>
             </div>
           </div>
         </div>
@@ -133,10 +133,10 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" id="Fugue">
           <img class="img-circle" src="images/logoCircle/logoMap.png" alt="Logo carte" width="140" height="140">
           <h2>Localisation</h2>
-          <p>Elle permet de localiser le patient à l'intérieur de la résidence ou de la propriété via des bornes WiFi installées à plusieurs endroits. Si la personne sort du périmètre défini, une alerte visuelle et vibratoire est envoyée sur le smartphone du soignant.</p>
+          <p>Elle permet de localiser le patient à l'intérieur de la résidence ou de la propriété aux moyens des bornes WiFi installées à plusieurs endroits. Si la personne sort du périmètre défini, une alerte visuelle et vibratoire est envoyée sur le smartphone du soignant.</p>
           <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -147,7 +147,7 @@
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="images/logoCircle/alarm2.png" alt="alarme" width="140" height="140">
-          <h2>Rappel</h2>
+          <h2>Rappel de médicaments</h2>
           <p>Notre produit permet de gérer le rappel de la prise de médicaments pour les personnes les prenant à heures fixes. Dès que le signal vibrant et lumineux (dessin simple) du bracelet s'enclenche, elle doit prendre ses médicaments. Après avoir pris ses médicaments dans son pilulier, elle appuie sur le bracelet pour signaler que l’action a bien été effectuée.</p>
           <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
         </div><!-- /.col-lg-4 -->
@@ -160,9 +160,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Aide aux personnes âgées <span class="text-muted"></span></h2>
-          <p class="lead">Les besoins de la personne âgée sont vastes et complexes. Dans l’optique d’aider la personne âgée et de soulagées le personnel médical nous avons créé CareWatch. CareWatch est un produit
-           au design simple et efficace. Il permettra au personnel médical de savoir depuis un smartphone si la personne âgée n’est pas sortie sans l’autorisations, c’est bien hydraté et pris c’est médicament.+ slogant à trouver</p>
+          <h2 class="featurette-heading" id="Simplicite">Aide aux personnes âgées <span class="text-muted"></span></h2>
+          <p class="lead">Les besoins de la personne âgée sont vastes et complexes. Dans l’optique d’aider la personne âgée et de soulager le personnel médical, nous avons créé CareWatch. CareWatch est un produit au design simple et efficace. Il permettra au personnel médical de savoir depuis un smartphone si la personne âgée n’est pas sortie sans l’autorisation, c’est bien hydraté et pris c’est médicament.</p> <!--+ slogant à trouver</p>-->
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="images/description/personnesA.jpg" alt="groupePersonneAgee">
@@ -173,8 +172,8 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Savoir se démarquer<span class="text-muted"> de la concurence.</span></h2>
-          <p class="lead">Notre particularité vis-à-vis de la concurrence est qu'avec ce système particulier, les personnes âgées oubliant par négligence de boire de l'eau seront rappelées et le cas échant, un message sera envoyé au personnel pour que celui-ci l'insite à s'hydrater. Cette application offre au personnel une aide non négligeable tant pour le bien être du patient que pour sa sécurité.</p>
+          <h2 class="featurette-heading">Savoir se démarquer<span class="text-muted"> de la concurrence.</span></h2>
+          <p class="lead">Notre particularité vis-à-vis de la concurrence est qu'avec ce système particulier, les personnes âgées oubliant par négligence de boire de l'eau seront rappelées et le cas échant, un message sera envoyé au personnel pour que celui-ci l'incite à s'hydrater. Cette application offre au personnel une aide non négligeable tant pour le bien-être du patient que pour sa sécurité.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="images/description/light.png" alt="ampoule allumée">
