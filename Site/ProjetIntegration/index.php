@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="#"><img class="first-slide" src="images/logoCW.jpg" alt="Logo de CareWatch"></a>
+              <a href="#"><img class="first-slide" src="images/logoCW60x60.jpg" alt="Logo de CareWatch"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -84,10 +84,10 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="images/cw.png" alt="First slide">
+          <img class="first-slide" src="images/logoCW500x500.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Bienvenue</h1>
+              <!--<h1 class="welcome">Bienvenue</h1>-->
               <p></p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Souscrire maintenant</a></p>
             </div>
@@ -211,7 +211,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="bootstrap/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="bootstrap/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
