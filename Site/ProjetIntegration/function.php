@@ -14,6 +14,10 @@ function connexion(){
 	return $connect;
 }
 function selectClient($db,$user,$pwd){
+	//force à travailler en utf8 avec la DB ;-)
+	$q= "SET NAMES 'utf8'";
+	$result = $db->query($q);
+
 	$query = "SELECT Id FROM CLIENT WHERE nameUser = '".$user."' AND pwdUser = '".$pwd."'";
 	$result = $db->query($query);
 	$find = $result->num_rows;
@@ -29,6 +33,12 @@ function selectClient($db,$user,$pwd){
 		$arrPatients = [];
 		while($row = $res->fetch_assoc()) {// récupération de la liste des patients
 			$arrPatients[$row['port']] = array("Nom" =>$row['nom'],"Prenom"=>$row['prenom'],"estPresent"=>$row['estPresent'],"note"=>$row['note']);
+			/*echo ("port : ".$row['port']."<br/>".
+				  "nom : ".$row['nom']."<br/>".
+				  "prenom : ".$row['prenom']."<br/>".
+				  "estPresent : ".$row['estPresent']."<br/>".
+				  "note : ".$row['note']."<br/>"
+				);*/
 		}
 		$arrFinal = array("id"=>$id[0],"infoPatients"=>$arrPatients);
 		echo(json_encode($arrFinal));
