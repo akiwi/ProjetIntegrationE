@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import be.ephec.groupe3.carewatch.Pat.OnePatient;
-import be.ephec.groupe3.carewatch.ui.UIAdapter;
+import be.ephec.groupe3.carewatch.UI.UIAdapter;
 
 /**
  * Created by aymeric on 12-10-16.
@@ -53,6 +53,7 @@ public class ListPatActivity extends Activity {
                 intent.putExtra("prenom", h.getPrenom());
                 intent.putExtra("estPresent",h.getEstPresent());
                 intent.putExtra("note",h.getNote());
+                intent.putExtra("port",h.getPort());
 
                 startActivity(intent);
             }
@@ -81,7 +82,7 @@ public class ListPatActivity extends Activity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject json_data = jsonArray.getJSONObject(i);
                 Log.d("POS-PAT", String.valueOf(i) + json_data.getString("Nom"));
-                OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"),json_data.getInt("estPresent"),json_data.getString("note"));
+                OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"),json_data.getInt("estPresent"),json_data.getString("note"),json_data.getInt("port"));
                 listPatient.add(patient);
             }
         } catch (JSONException e) {

@@ -9,10 +9,12 @@
 	}
 	else{
 		
-		$user = $_POST['nameUser'];
-		$pwd = $_POST['pwdUser'];
-		selectClient($db, $user, $pwd);
-		
+		$heure = $_POST['heure'];
+		$minute = $_POST['minute'];
+		$port = $_POST['port'];
+		$raison = $_POST['raison'];
+
+		setAlarm($db,$heure,$minute,$port,$raison);
 	}
 
 	

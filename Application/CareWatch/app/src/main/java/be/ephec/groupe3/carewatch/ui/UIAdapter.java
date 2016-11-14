@@ -1,4 +1,4 @@
-package be.ephec.groupe3.carewatch.ui;
+package be.ephec.groupe3.carewatch.UI;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import be.ephec.groupe3.carewatch.R;
-import be.ephec.groupe3.carewatch.pat.OnePatient;
+import be.ephec.groupe3.carewatch.Pat.OnePatient;
 
 /**
  * Created by aymeric on 25-10-16.

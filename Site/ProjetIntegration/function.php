@@ -3,6 +3,7 @@ function getIni(){
 	$fichier = "config/config.ini";
 	return parse_ini_file($fichier,1);
 }
+
 function connexion(){
 	$tab = getIni();
 	$host   = $tab['DB']['ip'];
@@ -13,6 +14,7 @@ function connexion(){
 	$connect = new mysqli($host,$user,$pdw,$db);
 	return $connect;
 }
+
 function selectClient($db,$user,$pwd){
 	//force à travailler en utf8 avec la DB ;-)
 	$q= "SET NAMES 'utf8'";
@@ -32,7 +34,7 @@ function selectClient($db,$user,$pwd){
 		//$res = $res->fetch_row();
 		$arrPatients = [];
 		while($row = $res->fetch_assoc()) {// récupération de la liste des patients
-			$arrPatients[$row['port']] = array("Nom" =>$row['nom'],"Prenom"=>$row['prenom'],"estPresent"=>$row['estPresent'],"note"=>$row['note']);
+			$arrPatients[$row['port']] = array("Nom" =>$row['nom'],"Prenom"=>$row['prenom'],"estPresent"=>$row['estPresent'],"note"=>$row['note'],"port" => $row['port']);
 			/*echo ("port : ".$row['port']."<br/>".
 				  "nom : ".$row['nom']."<br/>".
 				  "prenom : ".$row['prenom']."<br/>".
@@ -48,7 +50,23 @@ function selectClient($db,$user,$pwd){
 		echo(json_encode($arr));
 	}
 }
+
+function setAlarm($db,$heure,$minute,$port,$raison){
+	$insert = "INSERT INTO alarme (heure,minute,raison,port) VALUES('".$heure."','".$minute."','".$raison."','".$port."')";
+	$result = $db->query($insert);
+
+	if ($result) {
+		$arr = array("id" => "1");
+		echo(json_encode($arr));
+	}
+	else{
+		$arr = array("id" => "-1");
+		echo(json_encode($arr));
+	}
+}
+
 function deconnexion($db){
 	$db->close();
 }
+
 ?>

@@ -25,7 +25,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     private String login = "";
     private String pass = "";
 
-    private final String URL_CONNEXION = "http://192.168.1.44:12450/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
 
     private Boolean debug = false; //passer en mode debug et avoir des infos en plus
     private Boolean test = false; //active l'interface de test
@@ -76,6 +76,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     @Override
     public void showResultConnexion(String s){
         String id = "";
+        Log.d("result : ",s);
         try {
             JSONObject jo = new JSONObject(s);
             id = jo.optString("id").toString();
