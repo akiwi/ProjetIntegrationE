@@ -23,3 +23,15 @@ END;
 $$
 
 DELIMITER ;
+
+DELIMITER $$
+
+CREATE TRIGGER `majAlarmes_after_delete` AFTER DELETE ON `test`.`Alarme`
+FOR EACH ROW BEGIN
+DECLARE x INT;
+SET x = old.port;
+SET @exec_var = sys_exec(CONCAT('python /home/pi/scriptPython/majAlarmes.py ', x, ' ', old.heure, ' ', old.minute, ' ', old.raison));
+END;
+$$
+
+DELIMITER ;
