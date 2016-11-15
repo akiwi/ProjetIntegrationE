@@ -26,19 +26,23 @@ if __name__ == '__main__':
 		cur.execute("SELECT `Alarme`.`heure`,`Alarme`.`minute`,`Alarme`.`raison` FROM `test`.`Alarme` WHERE `Alarme`.`port` =" + str(sys.argv[1]) + " AND `Alarme`.`idAlarme` =" + str(sys.argv[5]))
 		tabADel = cur.fetchall()
 		bList = list(tabADel)
-		aList.remove(bList[0])  
-	#result = [ str(row).split(',', 1 ) for row in cur.fetchall()]
-	b = "[]('"     #caracteres a supprimer dans la chaine
-	arg4 = sys.argv[4].replace('%',' ') 
-	bList = (sys.argv[2],sys.argv[3],arg4)
-	aList.append(bList)
+		aList.remove(bList[0])		
+	if(len(sys.argv)==5):	
+		arg4 = sys.argv[4].replace('%',' ') 
+		bList = (int(sys.argv[2]),int(sys.argv[3]),arg4)
+		try:
+			aList.remove(bList)
+		except ValueError:
+			aList.append(bList)
+			pass
 	a = str(aList)
+	b = "[]('"     #caracteres a supprimer dans la chaine
 	print a
 	for char in b:
 		a = a.replace(char,"")
 	print a
 	
-	Demarrage serveur
+	#Demarrage serveur
 	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	TCP_IP = '192.168.1.41'
 	TCP_PORT =int(sys.argv[1])
