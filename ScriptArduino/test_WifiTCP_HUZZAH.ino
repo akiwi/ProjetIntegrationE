@@ -11,8 +11,8 @@ Adafruit_SSD1306 display = Adafruit_SSD1306();
 #define LED      0
 
 
-const char* ssid     = "VOO-541874";
-const char* password = "EGSAKUFH";
+const char* ssid     = "";
+const char* password = "";
 
 //image du verre avec l eau
 const unsigned char PROGMEM verre2 [] = {

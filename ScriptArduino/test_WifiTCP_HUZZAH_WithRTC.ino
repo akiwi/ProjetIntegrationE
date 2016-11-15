@@ -6,8 +6,8 @@
 Adafruit_SSD1306 display = Adafruit_SSD1306();
 RTC_DS3231 rtc;
 char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}; // sera utilise lorsqu on implementera les dates pour les alarmes
-const char* ssid     = "VOO-541874";  //SSID
-const char* password = "EGSAKUFH";    //PSWD
+const char* ssid     = "";			  //SSID
+const char* password = "";    		  //PSWD
 const int port = 5005;                //PORT
 const char* host = "109.133.170.117"; //IP HOST
 
