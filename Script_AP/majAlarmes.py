@@ -10,8 +10,8 @@ BUFFER_SIZE = 1024
 #connection DB
 db = MySQLdb.connect(host="127.0.0.1",   
                      user="root",         
-                     passwd="raspberry",  
-                     db="test")        
+                     passwd="",  
+                     db="")        
 
 
 # curseur pour executer le query sql
