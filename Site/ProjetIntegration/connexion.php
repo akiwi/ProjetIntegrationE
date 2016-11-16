@@ -1,21 +1,23 @@
 <?php
-	include "function.php";
+include "function.php";
+$db = connexion();
+if(mysqli_connect_errno()){
+	echo "Failled to connect to MySQL : ".mysqli_connect_errno();
+	exit();
+}
+else{
+	if(isset($_POST['nameUser']) && isset($_POST['pwdUser'])) {
 
-	$db = connexion();
+		selectClient($db, $_POST['nameUser'], $_POST['pwdUser']);
 
-	if(mysqli_connect_errno()){
-		echo "Failled to connect to MySQL : ".mysqli_connect_errno();
-		exit();
+	} elseif(isset($_POST['portPat'])){
+
+		selectCalendar($db,$_POST['portPat']);
+
+	} else{
+		echo " requète non compris !";
 	}
-	else{
-		
-		$user = $_POST['nameUser'];
-		$pwd = $_POST['pwdUser'];
-		selectClient($db, $user, $pwd);
-		
-	}
+}
 
-	
-	deconnexion($db);
-
+deconnexion($db);
 ?>
