@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:background="@drawable/round_corner_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker"
+            android:layout_weight="0.21"
+            android:headerBackground="?attr/actionModeSplitBackground"
+            android:numbersSelectorColor="?attr/actionModeSplitBackground" />
+
+        <EditText
+            android:padding="8dp"
+            android:background="@drawable/round_corner_dark_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:text="rajouter une description de l'alarme"
+            android:ems="10"
+            android:id="@+id/descrAlarme"
+            android:layout_weight="0.43" />
+
+        <Button
+            android:text="rajouter l'alarme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSendAlarme" />
+    </LinearLayout>
+</LinearLayout>

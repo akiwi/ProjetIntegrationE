@@ -46,15 +46,16 @@ public class ListPatActivity extends Activity {
         lvPatients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("position", String.valueOf(id));
                 OnePatient h = listPatient.get(position);
+                Log.i("position", String.valueOf(id));
+                Log.d("port", String.valueOf(h.getPort()));
+
                 Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
+                intent.putExtra("port",h.getPort());
                 intent.putExtra("nom", h.getNom());
                 intent.putExtra("prenom", h.getPrenom());
                 intent.putExtra("estPresent",h.getEstPresent());
                 intent.putExtra("note",h.getNote());
-                intent.putExtra("port",h.getPort());
-
                 startActivity(intent);
             }
         });
@@ -70,18 +71,11 @@ public class ListPatActivity extends Activity {
         List<OnePatient> listPatient = new ArrayList<>();
         try {
             JSONObject jo = new JSONObject(s);
-            JSONObject jArr = jo.getJSONObject("infoPatients");
+            JSONArray jArr = jo.getJSONArray("infoPatients");
 
-            Iterator x = jArr.keys(); //on récupère les key du jArr..
-            JSONArray jsonArray = new JSONArray();
-            while (x.hasNext()) {   //...nous permetant d'énumerer toute les key
-                String key = (String) x.next();
-                jsonArray.put(jArr.get(key));
-            }
-            Log.d("arraylength", String.valueOf(jsonArray.length()));
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject json_data = jsonArray.getJSONObject(i);
-                Log.d("POS-PAT", String.valueOf(i) + json_data.getString("Nom"));
+            for (int i = 0; i < jArr.length(); i++) {
+                JSONObject json_data = jArr.getJSONObject(i);
+                Log.d("port recu", ""+json_data.getInt("port"));
                 OnePatient patient = new OnePatient(i, json_data.getString("Nom"), json_data.getString("Prenom"),json_data.getInt("estPresent"),json_data.getString("note"),json_data.getInt("port"));
                 listPatient.add(patient);
             }
