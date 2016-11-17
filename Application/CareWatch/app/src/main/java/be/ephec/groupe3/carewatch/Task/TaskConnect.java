@@ -109,7 +109,6 @@ public class TaskConnect extends AsyncTask <ContentValues,String,String> {
             e.printStackTrace();
         }
 
-        Log.d("response task : ",response);
 
         return response;
     }
@@ -147,7 +146,6 @@ public class TaskConnect extends AsyncTask <ContentValues,String,String> {
     //permet de faire appelle à showresultConnexion réécrite dans les autre activité. et ainsi le partage de l'info
     @Override
     protected void onPostExecute(String s){
-        Log.d("callback",s);
         callback.showResultConnexion(s);
     }
 

@@ -21,14 +21,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     private TextView userName;
     private TextView userPwd;
     private Button btnConnect;
-
     private String login = "";
     private String pass = "";
-
-    private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://192.168.1.44:12450/projetintegration/connexion.php?";
 
     private Boolean debug = false; //passer en mode debug et avoir des infos en plus
-    private Boolean test = false; //active l'interface de test
 
 
     @Override
@@ -76,7 +73,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     @Override
     public void showResultConnexion(String s){
         String id = "";
-        Log.d("result : ",s);
         try {
             JSONObject jo = new JSONObject(s);
             id = jo.optString("id").toString();
@@ -92,6 +88,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
                 Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(),ListPatActivity.class);
             intent.putExtra("JsonList",s);
+            intent.putExtra("idUser",id);
             startActivity(intent);
         }
     }

@@ -5,9 +5,9 @@ package be.ephec.groupe3.carewatch.Pat;
  */
 
 public class OnePatient {
-    private int id, estPresent,port;
+    private int id, estPresent, port;
     private String nom,prenom, note;
-    public OnePatient(Integer id,String nom,String prenom,Integer estPresent,String note, Integer port ){
+    public OnePatient(Integer id,String nom,String prenom,Integer estPresent,String note,Integer port){
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -15,6 +15,7 @@ public class OnePatient {
         this.note = note;
         this.port = port;
     }
+
 
     public String getPrenom() {
         return prenom;
@@ -52,9 +53,15 @@ public class OnePatient {
         return estPresent;
     }
 
-    public void setEstPresent(int estPresent) { this.estPresent = estPresent; }
+    public void setEstPresent(int estPresent) {
+        this.estPresent = estPresent;
+    }
 
-    public int getPort(){ return port; }
+    public int getPort() {
+        return port;
+    }
 
-    public void setPort(int port) { this.port = port; }
+    public void setPort(int port) {
+        this.port = port;
+    }
 }

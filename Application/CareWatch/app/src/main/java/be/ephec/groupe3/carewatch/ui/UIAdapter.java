@@ -1,11 +1,14 @@
 package be.ephec.groupe3.carewatch.UI;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -26,6 +29,7 @@ public class UIAdapter extends ArrayAdapter<OnePatient> {
         this.repertoire = repertoire;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -37,6 +41,12 @@ public class UIAdapter extends ArrayAdapter<OnePatient> {
         OnePatient h = repertoire.get(position);
         text1.setText(h.getNom());
         text2.setText(h.getPrenom());
+        int estPre = h.getEstPresent();
+        if(estPre == 0){
+            text1.setTextColor(Color.WHITE);
+            text2.setTextColor(Color.WHITE);
+            convertView.setBackgroundResource(R.color.colorAccent);
+        }
         return convertView;
     }
 }

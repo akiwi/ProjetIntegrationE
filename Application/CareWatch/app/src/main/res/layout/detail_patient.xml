@@ -8,58 +8,114 @@
 
     <LinearLayout
         android:layout_margin="20dp"
-        android:background="@color/inputAccess"
+        android:background="@drawable/round_corner_layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
 
         <TextView
-            android:layout_marginTop="10dp"
+            android:padding="4dp"
+            android:layout_margin="10dp"
+            android:text="profil de Baurain Aymeric"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNomPre"
+            android:textAllCaps="true"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:textStyle="normal|bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="est actuellement : "
+                android:id="@+id/tvEstPresent"
+
+                android:textAlignment="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:textSize="15dp"
+                android:textStyle="normal|bold"
+                android:text="Calendrier du patient "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAlarme" />
+
+            <Button
+                android:layout_marginLeft="120dp"
+                android:layout_width="55dp"
+                android:id="@+id/btnCalendar"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/ic_input_add" />
+        </LinearLayout>
+
+        <ListView
+            android:background="@drawable/round_corner_dark_layout"
+            android:id="@+id/lvDateSortie"
+            android:layout_margin="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="77dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="15dp"
+
+                android:textStyle="normal|bold"
+                android:text="alarme du patient "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4" />
+            <Button
+                android:layout_marginLeft="1dp"
+                android:layout_width="55dp"
+                android:id="@+id/btnAlarme"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/ic_input_add" />
+        </LinearLayout>
+
+
+        <ListView
+            android:background="@drawable/round_corner_dark_layout"
+
+            android:id="@+id/lvAlarme"
+            android:layout_width="match_parent"
+            android:layout_margin="6dp"
+            android:layout_height="77dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
             android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:text="profil de :"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:id="@+id/tvNomPre" />
+            android:text="commentaire : "
+            android:id="@+id/tvCommentaire"
+            android:textStyle="normal|bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
             android:textSize="20dp"
-            android:text="est actuellement : "
-            android:id="@+id/tvEstPresent"
-
-            />
-
-        <TextView
+            android:text="TextView"
+            android:padding="7dp"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:textSize="20dp"
-            android:text="note : "
+            android:layout_margin="7dp"
+            android:background="@drawable/round_corner_dark_layout"
             android:id="@+id/tvNote"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:hint="Description alarme"
-            android:id="@+id/ET_desc_Alarm" />
-
-        <Button
-            android:text="Ajouter une alarme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_add_alarm" />
-
-        <TimePicker
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/timePicker2"
-            android:timePickerMode="spinner"
-            android:scrollIndicators="top|bottom" />
-
+            tools:text="voici un peut de contenu histoire de voir comment sa s'arrange, sinon j'aime beaucoup manger des patates sa reste une activité tres agréable et bénéfique "
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
