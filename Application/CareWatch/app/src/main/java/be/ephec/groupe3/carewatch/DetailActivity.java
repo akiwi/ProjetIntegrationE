@@ -41,7 +41,7 @@ public class DetailActivity extends Activity implements  TaskConnect.CustomConne
     private String prenom;
     private String note;
     private int estPre, port;
-    private final String URL_CONNEXION = "http://192.168.1.44:12450/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
 
 
     protected void onCreate(Bundle savedInstanceState) {
