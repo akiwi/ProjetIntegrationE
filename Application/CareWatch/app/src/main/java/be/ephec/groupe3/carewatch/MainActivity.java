@@ -15,15 +15,20 @@ import org.json.JSONObject;
 
 import java.util.Iterator;
 
+import be.ephec.groupe3.carewatch.Task.Client;
 import be.ephec.groupe3.carewatch.Task.TaskConnect;
 
 public class MainActivity extends Activity implements View.OnClickListener, TaskConnect.CustomConnexion {
     private TextView userName;
     private TextView userPwd;
     private Button btnConnect;
+
+    private Button btnSocket;
+    private TextView testSocket;
+
     private String login = "";
     private String pass = "";
-    private final String URL_CONNEXION = "http://192.168.1.44:12450/projetintegration/connexion.php?";
+    private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
 
     private Boolean debug = false; //passer en mode debug et avoir des infos en plus
 
@@ -32,14 +37,21 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connexion);
+        //socket
+        //setContentView(R.layout.sockettest);
 
         //on récupère les composants du layout
         userName = (TextView) findViewById(R.id.ET_name);
         userPwd = (TextView) findViewById(R.id.ET_pass);
         btnConnect = (Button) findViewById(R.id.btn_connect);
 
+        //socket
+        //btnSocket = (Button) findViewById(R.id.btn_connect_socket);
+        //testSocket = (TextView) findViewById(R.id.tv_socket);
+
         //on défini la méthode onClick plus bas et plus joli ATTENTION à bien ajouter l'implements
         btnConnect.setOnClickListener(this);
+        //btnSocket.setOnClickListener(this);
 
     }
 
@@ -62,6 +74,11 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
                 } else
                     Toast.makeText(this, "Les champs ne peuvent pas être vide", Toast.LENGTH_SHORT).show();
             }
+            //case R.id.btn_connect_socket:{
+            //    Client myClient = new Client(testSocket);
+            //    myClient.execute();
+            //    Toast.makeText(this,"click",Toast.LENGTH_SHORT).show();
+            //}
         }
 
     }

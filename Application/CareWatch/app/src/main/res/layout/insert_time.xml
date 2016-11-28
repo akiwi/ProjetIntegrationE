@@ -4,8 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backprim"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:scrollbars="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_margin="20dp"
         android:background="@drawable/round_corner_layout"
@@ -14,24 +18,53 @@
         android:layout_height="match_parent"
         android:weightSum="1">
 
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="241dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <RadioButton
+                android:text="Eau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_eau"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:text="Repas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_repas"
+                android:elevation="0dp"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:text="Autre (Max 10 caractères)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_autre"
+                android:onClick="onRadioButtonClicked"/>
+
+            <EditText
+                android:padding="8dp"
+                android:background="@drawable/round_corner_dark_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Description (max 10 caractères)"
+                android:maxLength="10"
+                android:ems="10"
+                android:id="@+id/descrAlarme"
+                android:layout_weight="0.43" />
+        </RadioGroup>
+
         <TimePicker
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="251dp"
             android:id="@+id/timePicker"
-            android:layout_weight="0.21"
             android:headerBackground="?attr/actionModeSplitBackground"
             android:numbersSelectorColor="?attr/actionModeSplitBackground" />
-
-        <EditText
-            android:padding="8dp"
-            android:background="@drawable/round_corner_dark_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:text="rajouter une description de l'alarme"
-            android:ems="10"
-            android:id="@+id/descrAlarme"
-            android:layout_weight="0.43" />
 
         <Button
             android:text="rajouter l'alarme"
@@ -39,4 +72,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnSendAlarme" />
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>
