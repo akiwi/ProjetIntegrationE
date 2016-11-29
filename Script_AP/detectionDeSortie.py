@@ -48,6 +48,7 @@ def pingerChaqueIp(db):
                                                         cur.execute ("UPDATE `CareWatch`.`patient` SET `patient`.`estPresent` =%s WHERE `patient`.`port`=%s" ,(0,str(tabDesIp[i][2])))
                                                         print str(tabDesIp[i][2])
                                                         db.commit()
+														#os.system("python /home/pi/scriptPython/majAlarmes.py " + str(tabDesIp[i][2]))
                                                         tabDesIp[i]=list(tabDesIp[i])
                                                         tabDesIp[i][1]=0
                                                         tabDesIp[i]=tuple(tabDesIp[i])
