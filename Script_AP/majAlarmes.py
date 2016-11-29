@@ -11,7 +11,7 @@ BUFFER_SIZE = 1024
 db = MySQLdb.connect(host="127.0.0.1",   
                      user="root",         
                      passwd="",  
-                     db="")        
+                     db="CareWatch")        
 
 
 # curseur pour executer le query sql
@@ -19,11 +19,11 @@ cur = db.cursor()
 
 if __name__ == '__main__':
 	# Query SQL
-	cur.execute("SELECT `Alarme`.`heure`,`Alarme`.`minute`,`Alarme`.`raison` FROM `test`.`Alarme` WHERE `Alarme`.`port` =" + str(sys.argv[1]))
+	cur.execute("SELECT `alarme`.`heure`,`alarme`.`minute`,`alarme`.`raison` FROM `CareWatch`.`alarme` WHERE `alarme`.`port` =" + str(sys.argv[1]))
 	tabAlarmes=cur.fetchall()
 	aList = list(tabAlarmes)
 	if(len(sys.argv)==6):
-		cur.execute("SELECT `Alarme`.`heure`,`Alarme`.`minute`,`Alarme`.`raison` FROM `test`.`Alarme` WHERE `Alarme`.`port` =" + str(sys.argv[1]) + " AND `Alarme`.`idAlarme` =" + str(sys.argv[5]))
+		cur.execute("SELECT `alarme`.`heure`,`alarme`.`minute`,`alarme`.`raison` FROM `CareWatch`.`alarme` WHERE `alarme`.`port` =" + str(sys.argv[1]) + " AND `alarme`.`idAlarme` =" + str(sys.argv[5]))
 		tabADel = cur.fetchall()
 		bList = list(tabADel)
 		aList.remove(bList[0])		
