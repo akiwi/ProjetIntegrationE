@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -19,10 +20,13 @@ import be.ephec.groupe3.carewatch.Task.TaskConnect;
 public class AlarmeActivity extends AppCompatActivity implements View.OnClickListener, TaskConnect.CustomConnexion {
     private String descriptionAlarme;
     private Button ajouterAlarme;
+    private RadioButton rbEau;
+    private RadioButton rbRepas;
+    private RadioButton rbAutre;
     private EditText etDescAlarm;
     private int port;
     private TimePicker alarm;
-    private final String URL_SET_ALARM = "http://192.168.1.44:12450/projetintegration/setAlarm.php?";
+    private final String URL_SET_ALARM = "http://192.168.0.16/projetintegration/setAlarm.php?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +39,29 @@ public class AlarmeActivity extends AppCompatActivity implements View.OnClickLis
 
         alarm = (TimePicker) findViewById(R.id.timePicker);
         ajouterAlarme = (Button) findViewById(R.id.btnSendAlarme);
+        rbEau = (RadioButton) findViewById(R.id.rb_eau);
+        rbRepas = (RadioButton) findViewById(R.id.rb_repas);
+        rbAutre = (RadioButton) findViewById(R.id.rb_autre);
         etDescAlarm = (EditText) findViewById(R.id.descrAlarme);
+        etDescAlarm.setEnabled(false);
         ajouterAlarme.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         int heure = alarm.getCurrentHour();
         int minute = alarm.getCurrentMinute();
-        descriptionAlarme = etDescAlarm.getText().toString();
+        if(rbEau.isChecked()){
+            descriptionAlarme = rbEau.getText().toString();
+        }
+        else if(rbRepas.isChecked()){
+            descriptionAlarme = rbRepas.getText().toString();
+        }
+        else{
+            descriptionAlarme = etDescAlarm.getText().toString();
+        }
+
         Toast.makeText(this,heure+":"+minute+" sur le port : "+port+" note : "+descriptionAlarme,Toast.LENGTH_SHORT).show();
         ContentValues cv = new ContentValues();
         cv.put("url",URL_SET_ALARM);
@@ -70,6 +88,36 @@ public class AlarmeActivity extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this,"Erreur serveur, l'alarme n'a pas pu être ajoutée",Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this,"alarme ajoutée",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onRadioButtonClicked(View v){
+        boolean checked = ((RadioButton) v).isChecked();
+
+        switch (v.getId()){
+            case R.id.rb_eau: {
+                if(checked){
+                    //Toast.makeText(this,"Eau coché",Toast.LENGTH_SHORT).show();
+                    etDescAlarm.setEnabled(false);
+                    etDescAlarm.setText("");
+                }
+                break;
+            }
+            case R.id.rb_repas: {
+                if(checked){
+                    //Toast.makeText(this,"Repas coché",Toast.LENGTH_SHORT).show();
+                    etDescAlarm.setEnabled(false);
+                    etDescAlarm.setText("");
+                }
+                break;
+            }
+            case R.id.rb_autre: {
+                if(checked){
+                    //Toast.makeText(this,"Autre coché",Toast.LENGTH_SHORT).show();
+                    etDescAlarm.setEnabled(true);
+                }
+                break;
+            }
         }
     }
 }

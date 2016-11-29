@@ -38,3 +38,12 @@ wme_enabled=1
 */
 //le sauver 
 //aller dans le fichier  sudo nano /etc/default/hostapd et décommenter DAEMON_CONF=/etc/hostapd/hostapd.conf
+//Un signal WiFi N (802.11g) de 2.4 GHz à un débit théorique de 54 Mbit/s et une portée 140 m
+//De manière théorique :
+//Débit théorique Portée(en intérieur) Portée(à l'extérieur)
+//54 Mbits/s  27 m   75 m
+//24 Mbit/s  42 m   140 m
+//6 Mbit/s  90 m   400 m
+//Test : Signal 2,4GHz dongle wifi raspberry
+//A travers 3 pièces séparer par 2 mur en béton armée et un équivalent air de 10 m, l’atténuation du signal pour une émission maximum légal de 20dbm est de -76. Le signal se trouve dans la fourchette bonne.
+//Le raspberry s’il a un environnement dégager alors il peut aller jusque 75 m avec un précision de 5m, l’atténuation du signal pour une émission maximum légal de 20dbm est inférieur à -77 donc excellent
