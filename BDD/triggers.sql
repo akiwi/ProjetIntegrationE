@@ -1,6 +1,6 @@
 DELIMITER $$
 
-CREATE TRIGGER `majAlarmes_after_insert` AFTER INSERT ON `CareWatch`.`Alarme`
+CREATE TRIGGER `majAlarmes_after_insert` AFTER INSERT ON `CareWatch`.`alarme`
 FOR EACH ROW BEGIN
 
 SET @raison = NEW.raison;
@@ -13,7 +13,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-CREATE TRIGGER `majAlarmes_after_update` AFTER UPDATE ON `CareWatch`.`Alarme`
+CREATE TRIGGER `majAlarmes_after_update` AFTER UPDATE ON `CareWatch`.`alarme`
 FOR EACH ROW BEGIN
 
 SET @raison = NEW.raison;
@@ -26,7 +26,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-CREATE TRIGGER `majAlarmes_after_delete` AFTER DELETE ON `CareWatch`.`Alarme`
+CREATE TRIGGER `majAlarmes_after_delete` AFTER DELETE ON `CareWatch`.`alarme`
 FOR EACH ROW BEGIN
 DECLARE x INT;
 SET x = old.port;
