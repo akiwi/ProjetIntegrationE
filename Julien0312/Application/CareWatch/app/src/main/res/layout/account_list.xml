@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="[TEXT1]"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19dp"
+            android:id="@+id/tv_list_account_name"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <Button
+            android:text="Supprimer"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btn_delete"/>
+
+        <Button
+            android:text="Modifier"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_modifier"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btn_delete"
+            android:layout_toStartOf="@+id/btn_delete" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

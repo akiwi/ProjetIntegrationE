@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:background="@drawable/round_corner_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePickerModif"
+            android:layout_weight="0.21"
+            android:headerBackground="?attr/actionModeSplitBackground"
+            android:numbersSelectorColor="?attr/actionModeSplitBackground" />
+
+        <TextView
+            android:text="devait sonner à 14:06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHeureBase"
+            android:layout_weight="0.21"
+            android:textSize="25dp" />
+
+        <EditText
+            android:padding="8dp"
+            android:background="@drawable/round_corner_dark_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="rajouter une description de l'alarme"
+            android:ems="10"
+            android:id="@+id/descrAlarmeModif"
+            android:layout_weight="0.43" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.21">
+
+            <Button
+                android:text="modifier l'alarme "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnModifAlarme"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="supprimer l'alarme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSupprAlarme"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

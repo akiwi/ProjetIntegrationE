@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim"
+    android:padding="20dp"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="341dp"
+        android:background="@drawable/round_corner_layout"
+        android:layout_weight="0.78">
+
+
+        <EditText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="47dp"
+            android:id="@+id/ET_add_nameUser"
+            android:hint="Nom d'utilisateur"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:background="@drawable/round_corner_button"
+            android:hint="Mot de passe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:gravity="center"
+            android:ems="10"
+            android:layout_below="@+id/ET_add_nameUser"
+            android:layout_alignRight="@+id/ET_add_nameUser"
+            android:layout_alignEnd="@+id/ET_add_nameUser"
+            android:layout_marginTop="17dp"
+            android:id="@+id/ET_add_pwd" />
+
+        <EditText
+            android:background="@drawable/round_corner_button"
+            android:hint="Confirmer mot de passe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:gravity="center"
+            android:ems="10"
+            android:layout_below="@+id/ET_add_pwd"
+            android:layout_alignRight="@+id/ET_add_pwd"
+            android:layout_alignEnd="@+id/ET_add_pwd"
+            android:layout_marginTop="17dp"
+            android:id="@+id/ET_add_pwd2" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_droit"
+            android:layout_below="@+id/ET_add_pwd2"
+            android:layout_alignLeft="@+id/ET_add_pwd2"
+            android:layout_alignStart="@+id/ET_add_pwd2"
+            android:layout_alignRight="@+id/ET_add_pwd2"
+            android:layout_alignEnd="@+id/ET_add_pwd2">
+
+            <RadioButton
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rb_add_infChef"
+                android:text="Infirmière en chef"
+                android:layout_marginTop="32dp" />
+
+            <RadioButton
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Infirmière"
+                android:id="@+id/rb_add_inf"
+                android:layout_marginTop="32dp" />
+        </RadioGroup>
+
+        <Button
+            android:text="Ajouter un compte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:id="@+id/btn_add_account"
+            android:layout_below="@+id/rg_droit"
+            android:layout_centerHorizontal="true" />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

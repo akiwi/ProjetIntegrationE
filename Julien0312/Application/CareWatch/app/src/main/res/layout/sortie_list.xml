@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_corner_button"
+    android:padding="4dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner_dark_layout"
+        >
+
+    <LinearLayout
+        android:padding="3dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04">
+
+        <TextView
+            android:background="@color/whiteGreen"
+            android:text="date de rentée : "
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvdateEntrée"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:background="@color/whiteGreen"
+            android:text="25/09/1995 à 17:00:55"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvListDroite"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04">
+
+        <TextView
+            android:text="date de sortie : "
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvdateSortie"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:background="@color/whiteGreen"
+            android:text="25/09/1995 à 17:00:55"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvListGauche"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+        <TextView
+
+            android:padding="4dp"
+            android:layout_marginBottom="12dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+           Cras elementum ultrices diam. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDateComment"
+            android:layout_weight="0.04" />
+    </LinearLayout>
+</LinearLayout>
