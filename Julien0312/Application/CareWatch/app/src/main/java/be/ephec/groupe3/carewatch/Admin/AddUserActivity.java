@@ -41,6 +41,8 @@ public class AddUserActivity extends Activity implements View.OnClickListener,Ta
         rb_inf = (RadioButton) findViewById(R.id.rb_add_inf);
         btn_add = (Button) findViewById(R.id.btn_add_account);
 
+        rb_inf.setChecked(true);
+
         btn_add.setOnClickListener(this);
 
 
@@ -74,7 +76,6 @@ public class AddUserActivity extends Activity implements View.OnClickListener,Ta
                 if(mdp.equals(mdp2)){
                     if(((droit.equals("2")) || (droit.equals("3")))){
                         TaskConnect connect = new TaskConnect(this);
-
                         connect.execute(cv);
                     }
                     else{

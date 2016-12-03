@@ -143,8 +143,22 @@ function addUser($db,$name,$mdp,$droit){
 			echo(json_encode(-1));
 		}
 	}
+}
 
+function updateUser($db,$id,$name,$mdp,$droit){
+	$selectUser = "SELECT idClient FROM CLIENT WHERE nameUser='".$name."';";
+	$result = $db->query($selectUser);
+
+	$find = $result->num_rows;
+	if($find > 0 ){
+		
+	}
+	else{
+		
+
+	}
 	
+
 }
 
 function deconnexion($db){

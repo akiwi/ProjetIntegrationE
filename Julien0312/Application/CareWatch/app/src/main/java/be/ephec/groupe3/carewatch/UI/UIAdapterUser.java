@@ -68,6 +68,7 @@ public class UIAdapterUser extends ArrayAdapter<OneUser>{
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(getContext(), EditInfActivity.class);
+                intent.putExtra("id",repertoire.get(position).getId());
                 intent.putExtra("nom",repertoire.get(position).getNameUser());
                 intent.putExtra("droit",repertoire.get(position).getDroit());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
