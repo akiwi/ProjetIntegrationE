@@ -19,7 +19,7 @@ import be.ephec.groupe3.carewatch.Task.TaskConnect;
 
 public class AlertDialogFragment extends DialogFragment{
 
-    private String URL_DELETE = "http://192.168.0.16/projetintegration/deleteUser.php?";
+
 
 
     @Override
@@ -32,7 +32,7 @@ public class AlertDialogFragment extends DialogFragment{
                         Log.i("Supprimé","Suppression de " + getArguments().get("nom"));
                         TaskCon connect = new TaskCon();
                         ContentValues cv = new ContentValues();
-                        cv.put("url",URL_DELETE);
+                        cv.put("url",getArguments().get("url").toString());
                         cv.put("id",getArguments().get("id").toString());
                         connect.execute(cv);
 
@@ -41,7 +41,9 @@ public class AlertDialogFragment extends DialogFragment{
                 .setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Log.i("Supprimé","Annuler " + getArguments().get("nom"));
+                        if(!getArguments().get("nom").equals(null))
+                               Log.i("Supprimé","Annuler " + getArguments().get("nom"));
+
                     }
                 });
 

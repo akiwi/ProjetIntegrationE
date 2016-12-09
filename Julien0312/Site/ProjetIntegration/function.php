@@ -196,6 +196,52 @@
 		return $result;
 	}
 
+	function updatePatient($db,$port,$name,$surname,$note){
+		$updateUser = "UPDATE patient SET nom='".$name."', prenom = '".$surname."', note ='".$note."' WHERE port ='".$port."';";
+		$result = $db->query($updateUser);
+
+		if($result){
+			echo "patient modifié.";
+		}
+		else{
+			echo "Erreur lors de l'enregistrement";
+		}
+		
+	}
+
+	function deletePatient($db,$port){
+		$delete = "DELETE FROM patient WHERE port = ".$port;
+		$result = $db->query($delete);
+		
+		if($result){
+			echo "patient supprimé.";
+		}
+		else{
+			echo "Erreur lors de la suppression";
+		}
+	}
+
+	function addPatient($db,$name,$surname,$note){
+		$selectUser = "SELECT port FROM CLIENT WHERE nom='".$name."' AND prenom ='".$surname."';";
+		$result = $db->query($selectUser);
+
+		$find = $result->num_rows;
+		if($find > 0 ){
+			echo(json_encode(-2));
+		}
+		else{
+			$add = "INSERT INTO patient (nom,prenom,note) VALUES('" . $name . "','" . $surname . "','" . $note . "')";
+			$result = $db->query($add);
+		
+			if($result){
+			echo "patient ajouté.";
+		}
+		else{
+			echo "Erreur lors de l'ajout";
+		}
+		}
+	}
+
 	function deconnexion($db){
 		$db->close();
 	}

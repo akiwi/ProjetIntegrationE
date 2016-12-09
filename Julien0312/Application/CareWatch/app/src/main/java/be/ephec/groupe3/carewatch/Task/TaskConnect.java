@@ -63,9 +63,9 @@ public class TaskConnect extends AsyncTask <ContentValues,String,String> {
              *  params correspond à ce que nous envoyons quand on fais l'execute (cf. MainActivity)
              */
 
-
             URL url = new URL(params[0].get("url").toString());
             Log.d("URL ",params[0].get("url").toString());
+
 
 
 

@@ -30,6 +30,8 @@ public class UIAdapterUser extends ArrayAdapter<OneUser>{
     private List<OneUser> repertoire;
     private FragmentManager manager;
 
+    private String URL_DELETE = "http://192.168.0.16/projetintegration/deleteUser.php?";
+
     public UIAdapterUser(Context context,List<OneUser> repertoire, FragmentManager manager) {
         super(context,0, repertoire);
         this.context = context;
@@ -59,6 +61,7 @@ public class UIAdapterUser extends ArrayAdapter<OneUser>{
              Bundle extras = new Bundle();
              extras.putInt("id",repertoire.get(position).getId());
              extras.putString("nom",repertoire.get(position).getNameUser());
+             extras.putString("url",URL_DELETE);
              box.setArguments(extras);
              box.show(manager,"dialog");
          }

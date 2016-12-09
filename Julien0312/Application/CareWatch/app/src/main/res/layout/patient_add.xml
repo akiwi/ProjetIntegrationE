@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backprim"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="344dp"
+        android:layout_height="341dp"
+        android:background="@drawable/round_corner_layout"
+        android:layout_weight="0.78">
+
+        <addText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="47dp"
+            android:id="@+id/ET_add_namePat"
+            android:hint="Nom du patient"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <addText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="25dp"
+            android:id="@+id/ET_add_surnamePat"
+            android:hint="Prénom du patient"
+            android:layout_below="@+id/ET_add_namePat"
+            android:layout_alignLeft="@+id/ET_add_namePat"
+            android:layout_alignStart="@+id/ET_add_namePat" />
+
+        <addText
+            android:background="@drawable/round_corner_button"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="25dp"
+            android:id="@+id/ET_add_comPat"
+            android:hint="Commentaire"
+            android:layout_below="@+id/ET_add_surnamePat"
+            android:layout_alignLeft="@+id/ET_add_surnamePat"
+            android:layout_alignStart="@+id/ET_add_surnamePat" />
+
+        <Button
+            android:text="Modifier le patient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:id="@+id/btn_add_patient"
+            android:layout_below="@+id/ET_add_comPat"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</LinearLayout>

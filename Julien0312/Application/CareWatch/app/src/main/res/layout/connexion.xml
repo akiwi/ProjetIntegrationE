@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Name"
-            android:text="julien"
+            android:text="aymeric"
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:id="@+id/ET_name" />
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="password"
-            android:text="julien"
+            android:text="aymeric"
             android:ems="10"
             android:id="@+id/ET_pass"
             />

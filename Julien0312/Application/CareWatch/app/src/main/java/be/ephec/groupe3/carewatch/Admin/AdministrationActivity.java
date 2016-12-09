@@ -1,10 +1,8 @@
 package be.ephec.groupe3.carewatch.Admin;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -98,7 +96,7 @@ public class AdministrationActivity extends Activity implements View.OnClickList
         switch(v.getId()) {
             case R.id.btn_add: {
                 Toast.makeText(this,"ADD",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(),AddUserActivity.class);
+                Intent intent = new Intent(getApplicationContext(),AddInfActivity.class);
                 startActivity(intent);
             }
         }

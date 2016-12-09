@@ -17,11 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Admin.AdministrationActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".ListPatActivity" />
+        <activity android:name=".Admin.AdministrationActivity" />
         <activity android:name=".Admin.EditInfActivity" />
-        <activity android:name=".Admin.AddUserActivity" />
+        <activity android:name=".Admin.AddInfActivity" />
+        <activity android:name=".Pat.PatientEditActivity" />
+        <activity android:name=".Pat.PatientAddAcitvity" />
 
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for

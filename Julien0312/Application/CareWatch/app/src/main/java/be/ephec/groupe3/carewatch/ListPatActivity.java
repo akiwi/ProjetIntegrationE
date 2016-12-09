@@ -10,6 +10,7 @@ import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,6 +23,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import be.ephec.groupe3.carewatch.Pat.OnePatient;
+import be.ephec.groupe3.carewatch.Pat.PatientAddAcitvity;
+import be.ephec.groupe3.carewatch.Pat.PatientEditActivity;
 import be.ephec.groupe3.carewatch.Task.TaskClient;
 import be.ephec.groupe3.carewatch.UI.UIAdapter;
 
@@ -29,9 +32,10 @@ import be.ephec.groupe3.carewatch.UI.UIAdapter;
  * Created by aymeric on 12-10-16.
  */
 
-public class ListPatActivity extends Activity {
+public class ListPatActivity extends Activity implements View.OnClickListener {
     ListView lvPatients;
     List<OnePatient> listPatient ;
+    Button btn_ajout;
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -53,6 +57,7 @@ public class ListPatActivity extends Activity {
         listPatient = transformJson(jsonList); //transformation du tableau JSON en tableau d'objet OnePatient
         recupPatient(listPatient); // utilisation de l'adapter afin d'afficher les patients
 
+        btn_ajout = (Button) findViewById(R.id.btn_pat_add);
 
         lvPatients = (ListView) findViewById(R.id.LvPatients);
         lvPatients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -104,4 +109,13 @@ public class ListPatActivity extends Activity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_pat_add:{
+                Intent intent = new Intent(getApplicationContext(), PatientAddAcitvity.class);
+                startActivity(intent);
+            }
+        }
+    }
 }

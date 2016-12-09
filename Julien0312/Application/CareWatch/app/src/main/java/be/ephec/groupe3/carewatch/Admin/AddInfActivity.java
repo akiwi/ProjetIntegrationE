@@ -18,7 +18,7 @@ import be.ephec.groupe3.carewatch.Task.TaskConnect;
  * Created by Julien on 3/12/2016.
  */
 
-public class AddUserActivity extends Activity implements View.OnClickListener,TaskConnect.CustomConnexion{
+public class AddInfActivity extends Activity implements View.OnClickListener,TaskConnect.CustomConnexion{
 
     private EditText et_name;
     private EditText et_mdp;

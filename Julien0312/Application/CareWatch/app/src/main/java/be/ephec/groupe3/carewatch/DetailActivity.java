@@ -13,6 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,8 +27,10 @@ import java.util.StringTokenizer;
 import be.ephec.groupe3.carewatch.DateChange.AlarmeActivity;
 import be.ephec.groupe3.carewatch.DateChange.AlarmeModifActivity;
 import be.ephec.groupe3.carewatch.DateChange.CalendarActivity;
+import be.ephec.groupe3.carewatch.Dialog.AlertDialogFragment;
 import be.ephec.groupe3.carewatch.Pat.OneAlarme;
 import be.ephec.groupe3.carewatch.Pat.OneDate;
+import be.ephec.groupe3.carewatch.Pat.PatientEditActivity;
 import be.ephec.groupe3.carewatch.Task.TaskConnect;
 
 /**
@@ -38,6 +41,8 @@ public class DetailActivity extends Activity implements  TaskConnect.CustomConne
     private List<OneDate> listDate ;
     private List<OneAlarme> listAlarme ;
     private HashMap<String, String> element;
+    private Button btn_edit_pat;
+    private Button btn_delete_pat;
 
     private List<HashMap<String, String>> listDat;
     private List<HashMap<String, String>> listAl;
@@ -47,6 +52,7 @@ public class DetailActivity extends Activity implements  TaskConnect.CustomConne
     private String note;
     private int estPre, port;
     private final String URL_CONNEXION = "http://192.168.0.16/projetintegration/connexion.php?";
+    private final String URL_DELETE = "http://192.168.0.16/projetintegration/deletePat.php?";
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +77,12 @@ public class DetailActivity extends Activity implements  TaskConnect.CustomConne
 
         Button btnCalendar = (Button) findViewById(R.id.btnCalendar);
         Button btnAlarme = (Button) findViewById(R.id.btnAlarme);
+        btn_edit_pat = (Button) findViewById(R.id.btn_detail_edit);
+        btn_delete_pat = (Button) findViewById(R.id.btn_detail_delete);
+
+        btn_edit_pat.setOnClickListener(this);
+        btn_delete_pat.setOnClickListener(this);
+
         if (estPre == 0) {
             tvEstPre.setTextColor(Color.RED);
             tvEstPre.setText("N'est actuellement pas présent ! ");
@@ -223,6 +235,24 @@ public class DetailActivity extends Activity implements  TaskConnect.CustomConne
                 Intent intentAl = new Intent(getApplicationContext(),AlarmeActivity.class);
                 intentAl.putExtra("port",port);
                 startActivity(intentAl);
+                break;
+            case R.id.btn_detail_edit:
+                Intent intentEditPat = new Intent(getApplicationContext(), PatientEditActivity.class);
+                intentEditPat.putExtra("port",port);
+                intentEditPat.putExtra("comment", note);
+                intentEditPat.putExtra("name",nom);
+                intentEditPat.putExtra("surname",prenom);
+                startActivity(intentEditPat);
+                break;
+            case R.id.btn_detail_delete:
+                Toast.makeText(getApplicationContext(),"delete "+port,Toast.LENGTH_SHORT).show();
+                AlertDialogFragment box = new AlertDialogFragment();
+                Bundle extras = new Bundle();
+                extras.putInt("port",port);
+                extras.putString("nom",nom);
+                extras.putString("url",URL_DELETE);
+                box.setArguments(extras);
+                box.show(getFragmentManager(),"dialog");
                 break;
         }
     }
