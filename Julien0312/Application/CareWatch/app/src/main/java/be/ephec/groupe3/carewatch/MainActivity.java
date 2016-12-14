@@ -13,7 +13,13 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+
 import be.ephec.groupe3.carewatch.Admin.AdministrationActivity;
+import be.ephec.groupe3.carewatch.Admin.PasswordHash;
 import be.ephec.groupe3.carewatch.Task.TaskConnect;
 
 public class MainActivity extends Activity implements View.OnClickListener, TaskConnect.CustomConnexion {
@@ -49,12 +55,14 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
             case R.id.btn_connect: {
                 login = userName.getText().toString();
                 pass = userPwd.getText().toString();
+                PasswordHash ph = new PasswordHash(login,pass);
+                Log.e("PASSHASH", ph.getPasshash());
                 TaskConnect con = new TaskConnect(this);
                 ContentValues cv = new ContentValues();
                 //toujours mettre url dans le content value car important pour la TaskConnect
                 cv.put("url", URL_CONNEXION);
                 cv.put("nameUser", login);
-                cv.put("pwdUser", pass);
+                cv.put("pwdUser", ph.getPasshash());
                 if ((!login.isEmpty()) && (!pass.isEmpty())) {
                     //on passe l'url et les identifiant à notre tache
                     con.execute(cv);
@@ -64,6 +72,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Task
         }
 
     }
+
+
 
     /**
      * Grâce à l'implements CustomConnexion on peut utiliser les toast :-)

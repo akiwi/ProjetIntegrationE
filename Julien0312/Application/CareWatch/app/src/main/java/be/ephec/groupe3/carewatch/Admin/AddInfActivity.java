@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import be.ephec.groupe3.carewatch.R;
 import be.ephec.groupe3.carewatch.Task.TaskCon;
 import be.ephec.groupe3.carewatch.Task.TaskConnect;
@@ -69,7 +73,10 @@ public class AddInfActivity extends Activity implements View.OnClickListener,Tas
                 cv.put("url",URL_ADD);
                 cv.put("name",name);
                 if(mdp.equals(mdp2)){
-                    cv.put("mdp",mdp);
+                    PasswordHash ph = new PasswordHash(name,mdp);
+
+                    cv.put("mdp",ph.getPasshash());
+
                 }
                 cv.put("droit",droit);
 
@@ -89,6 +96,7 @@ public class AddInfActivity extends Activity implements View.OnClickListener,Tas
             }
         }
     }
+
 
     @Override
     public void showResultConnexion(String s) {

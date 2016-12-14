@@ -77,7 +77,8 @@ public class EditInfActivity  extends Activity implements View.OnClickListener,T
                 cv.put("url", URL_EDIT);
                 cv.put("name", name);
                 if (mdp.equals(mdp2) ) {
-                    cv.put("mdp", mdp);
+                    PasswordHash ph = new PasswordHash(name,mdp);
+                    cv.put("mdp", ph.getPasshash());
                 }
                 cv.put("droit", droit);
 
